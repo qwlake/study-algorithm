@@ -68,6 +68,15 @@ def fib5(n):
     ans = 1 / sqrt_5 * ( ((1 + sqrt_5) / 2) ** n  - ((1 - sqrt_5) / 2) ** n )
     return int(ans)
 
+def fib6(n):
+    a, b = 1, 1
+    for i in range(2, n+1):
+        if i % 2 == 0:
+            a = a + b
+        else:
+            b = a + b
+    return max(a,b)
+
 n = int(input())
 # start = time.time()
 # print(fib1(n))
@@ -81,10 +90,14 @@ n = int(input())
 # print(fib3(n) % 10007)
 # print(time.time() - start)
 
-start = time.time()
-print(fib4(n+1) % 10007)
+# start = time.time()
+# print(fib4(n+1) % 10007)
 # print(time.time() - start)
 
 # start = time.time()
 # print(fib5(n+1) % 10007)
+# print(time.time() - start)
+
+start = time.time()
+print(fib6(n) % 10007)
 # print(time.time() - start)
