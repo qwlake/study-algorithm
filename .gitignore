@@ -1,5 +1,8 @@
-#eclipse
 
+# Created by https://www.gitignore.io/api/eclipse,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=eclipse,visualstudiocode
+
+### Eclipse ###
 .metadata
 bin/
 tmp/
@@ -11,9 +14,6 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-.classpath
-.project
-*.class
 
 # External tool builders
 .externalToolBuilders/
@@ -59,71 +59,27 @@ local.properties
 .scala_dependencies
 .worksheet
 
+### Eclipse Patch ###
+# Eclipse Core
+.project
 
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
 
-# Python
+# Annotation Processing
+.apt_generated
 
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+.sts4-cache/
 
-# C extensions
-*.so
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter lab
-.ipynb_checkpoints
-
-# Pycharm
-.idea
+# End of https://www.gitignore.io/api/eclipse,visualstudiocode
