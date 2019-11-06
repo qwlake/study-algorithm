@@ -2,25 +2,30 @@
 
 int max(int a, int b) {return a<b?b:a;}
 
+int loop(int *a, int size, int idx, int cups, int sum) {
+	int x = 0; int y = 0;
+	if (idx < size) {
+		if (cups == 0) {
+			x = loop(a, size, idx+1, 1, sum+a[idx]);
+		} else  {
+			x = loop(a, size, idx+1, 0, sum);
+		}	
+		if (cups == 1) {
+			y = loop(a, size, idx+1, 2, sum+a[idx]);
+		}
+		
+		return max(x,y);
+	} else return sum;
+}
+
 int main() {
     int n;
 	scanf("%d", &n);
-	
-	int a[500][500];
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j <= i; j++)
-			scanf("%d", &a[i][j]);
-
-	for (int i = 1; i < n; i++) {
-		a[i][0] = a[i][0] + a[i-1][0];
-		for (int j = 1; j <= i+1; j++) {
-			a[i][j] = max(a[i][j]+a[i-1][j], a[i][j]+a[i-1][j-1]);
-		}
-	}
-
-	int max = 0;
+	int a[10000];
 	for (int i = 0; i < n; i++) {
-		max = max < a[n-1][i]? a[n-1][i]:max;
+		scanf("%d", &a[i]);
 	}
-	printf("%d", max);
+	int ret = loop(a, n, 0, 0, 0);
+	printf("%d", ret);
+	return 0;
 }
