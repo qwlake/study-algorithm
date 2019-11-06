@@ -2,22 +2,6 @@
 
 int max(int a, int b) {return a<b?b:a;}
 
-int loop(int *a, int size, int idx, int cups, int sum) {
-	int x = 0; int y = 0;
-	if (idx < size) {
-		if (cups == 0) {
-			x = loop(a, size, idx+1, 1, sum+a[idx]);
-		} else  {
-			x = loop(a, size, idx+1, 0, sum);
-		}	
-		if (cups == 1) {
-			y = loop(a, size, idx+1, 2, sum+a[idx]);
-		}
-		
-		return max(x,y);
-	} else return sum;
-}
-
 int possible(int *isDrinked, int idx) {
 	int t1 = isDrinked[idx-1] + isDrinked[idx-2];
 	int t2 = isDrinked[idx+1] + isDrinked[idx+2];
@@ -70,7 +54,5 @@ int main() {
 		sum[i] = m;
 	}
 	printf("%d", sum[n-1]);
-	// int ret = loop(a, n, 0, 0, 0);
-	// printf("%d\n", ret);
 	return 0;
 }
