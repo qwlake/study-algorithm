@@ -4,20 +4,15 @@ a = [int(sys.stdin.readline()) for i in range(N)]
 a.insert(0, 0)
 sets = set()
 for i in range(1, N+1):
-    stack = [i]
-    tmp = []
+    stack = [(i, [i])]
     while len(stack) != 0:
-        p = stack.pop()
-        tmp.append(p)
-        stck_size = len(stack)
-        if a[i] == p:
-            sets.update(set(tmp))
+        s, s_list = stack.pop()
+        if a[i] == s:
+            sets.update(set(s_list))
             break
         for j in range(1, N+1):
-            if a[j] == p:
-                stack.append(j)
-        if stck_size == len(stack):
-            tmp.pop()
+            if a[j] == s:
+                stack.append((j, s_list+[j]))
 sets = sorted(list(sets))
 print(len(sets))
 for e in sets:
