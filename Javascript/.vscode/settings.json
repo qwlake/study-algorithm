@@ -1,0 +1,7 @@
+{ 
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe", 
+    "code-runner.executorMap": {
+        "javascript": "node",
+    },
+    "code-runner.runInTerminal": true,
+}
