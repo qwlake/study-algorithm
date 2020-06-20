@@ -29,13 +29,12 @@ def solution(key, lock):
         for j in range(len(lock)):
             extended[i+len(lock)][j+len(lock)] = lock[i][j]
     
-    for _ in range(1):
+    for _ in range(4):
         key = rotate(key)
         for i in range(len(lock)*2):
             for j in range(len(lock)*2):
                 if check(extended, key, i, j):
                     return True
-        
 
     return False
 
